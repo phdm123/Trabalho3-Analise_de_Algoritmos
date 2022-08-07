@@ -4,7 +4,7 @@ def First_fit():
     P = [[0]] #Lista de pacotes com um pacote previamente aberto
     P_aux = []
     inserido = 0
-    with open("binpacking-instancias/input/Waescher_TEST0005.txt") as arq: #Ler o arquivo
+    with open("binpacking-instancias/input/Waescher_TEST0097.txt") as arq: #Ler o arquivo
         for linha in arq.readlines():
             valor = int(linha.strip()) #Pegando os valores de cada linha do arquivo
             P_aux.append(valor)
@@ -29,7 +29,7 @@ def First_fit():
 def Next_fit():
     P = [[0]] #Lista de pacotes com um pacote previamente aberto
     P_aux = []
-    with open("binpacking-instancias/input/Waescher_TEST0005.txt") as arq: #Ler o arquivo
+    with open("binpacking-instancias/input/Waescher_TEST0097.txt") as arq: #Ler o arquivo
         for linha in arq.readlines():
             valor = int(linha.strip()) #Pegando os valores de cada linha do arquivo
             P_aux.append(valor)
@@ -50,7 +50,7 @@ def Best_fit():
     P_aux = []
     maior_peso = -1
     index = -1
-    with open("binpacking-instancias/input/Waescher_TEST0005.txt") as arq: #Ler o arquivo
+    with open("binpacking-instancias/input/Waescher_TEST0097.txt") as arq: #Ler o arquivo
         for linha in arq.readlines():
             valor = int(linha.strip()) #Pegando os valores de cada linha do arquivo
             P_aux.append(valor)
@@ -80,18 +80,18 @@ if __name__ == '__main__':
         resultado = First_fit()
         end = t.time()
         print("Pacotes utilizados: " + str(len(resultado)) + ".")
-        print("Tempo transcorrido: " + str(round(start - end, 2)) + " segundos.")
+        print("Tempo transcorrido: " + str(round(end - start, 5)) + " segundos.")
     elif(resposta == '2'):
         start = t.time()
         resultado = Next_fit()
         end = t.time()
         print("Pacotes utilizados: " + str(len(resultado)) + ".")
-        print("Tempo transcorrido: " + str(round(start - end, 2)) + " segundos.")
+        print("Tempo transcorrido: " + str(round(end - start, 5)) + " segundos.")
     elif(resposta == '3'):
         start = t.time()
         resultado = Best_fit()
         end = t.time()
         print("Pacotes utilizados: " + str(len(resultado)) + ".")
-        print("Tempo transcorrido: " + str(round(start - end, 2)) + " segundos.")
+        print("Tempo transcorrido: " + str(round(end - start, 5)) + " segundos.")
     else:
         print("Número incorreto.")
